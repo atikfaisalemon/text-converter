@@ -1,12 +1,11 @@
-import { useState } from "react";
 import "./App.css";
 import Textfield from "./Components/TextFiled";
+import Header from "./Components/Header";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
+      <Header />
       <div className="text-black"></div>
       <div className="sm:mx-52">
         <Textfield />
