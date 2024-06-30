@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Textfield() {
   const [text, setText] = useState("");
@@ -9,14 +10,86 @@ export default function Textfield() {
   const textUpperCase = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    if (text) {
+      toast.success("Text Uppercased!", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    } else {
+      toast.error("Please input a text", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    }
   };
   const clearText = () => {
     setText("");
+    if (text) {
+      toast.success("Text Cleard!", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    } else {
+      toast.error("Please input a text", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    }
   };
 
   const textLowerCase = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    if (text) {
+      toast.success("Text LowerCased!", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    } else {
+      toast.error("Please input a text", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    }
+  };
+
+  const copyed = () => {
+    navigator.clipboard.writeText(text);
+    if (text) {
+      toast.success("Text Copyed!", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    } else {
+      toast.error("Please input a text", {
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    }
   };
 
   return (
@@ -66,9 +139,7 @@ export default function Textfield() {
           <div className="flex justify-between dark:text-white">
             <h2>Preview Text:</h2>
             <button
-              onClick={() => {
-                navigator.clipboard.writeText(text);
-              }}
+              onClick={copyed}
               type="button"
               className="rounded-md bg-green-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
             >

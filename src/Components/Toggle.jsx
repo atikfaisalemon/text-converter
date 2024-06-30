@@ -1,18 +1,38 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { Field, Label, Switch } from "@headlessui/react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Toggle() {
+export const Toggle = memo(() => {
   const [enabled, setEnabled] = useState(false);
 
-  if (enabled === true) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+  useEffect(() => {
+    if (enabled) {
+      document.documentElement.classList.add("dark");
+      toast("Dark Mode On!", {
+        icon: "👏",
+        style: {
+          background: "white",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    } else {
+      document.documentElement.classList.remove("dark");
+      toast("Light Mode On", {
+        icon: "👏",
+        style: {
+          background: "#333",
+          color: "#fff",
+        },
+        duration: 1000,
+        position: "top-right",
+      });
+    }
+  }, [enabled]);
 
   return (
     <Field as="div" className="flex items-center">
@@ -41,4 +61,6 @@ export default function Toggle() {
       </Label>
     </Field>
   );
-}
+});
+
+Toggle.displayName = "Toggle";
