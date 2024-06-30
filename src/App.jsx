@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <div className="text-black"></div>
-      <div className="sm:mx-52">
+      <div className="sm:px-52">
         <Textfield />
       </div>
     </>

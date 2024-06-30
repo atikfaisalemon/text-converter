@@ -37,7 +37,7 @@ export default function Textfield() {
           className="block w-full rounded-md  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm"
         />
       </div>
-      <div className="sm:flex sm:gap-6 flex justify-center md:justify-start gap-3 py-2 ">
+      <div className="sm:flex sm:gap-6 flex justify-center md:justify-start gap-3 py-2">
         <button
           onClick={textUpperCase}
           type="button"
@@ -84,7 +84,7 @@ export default function Textfield() {
             <span className="text-orange-500">({text.length})</span>
           </h2>
         </div>
-        {text}
+        <div className="dark:text-white">{text}</div>
       </div>
     </div>
   );
