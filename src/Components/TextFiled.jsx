@@ -20,10 +20,10 @@ export default function Textfield() {
   };
 
   return (
-    <div className="mx-3">
+    <div className="px-3 dark:bg-gray-900 bg-white">
       <label
         htmlFor="comment"
-        className="block text-sm font-bold leading-6 text-gray-900"
+        className="block text-sm font-bold leading-6 text-gray-900 dark:text-white"
       >
         Add your Text :
       </label>
@@ -34,14 +34,14 @@ export default function Textfield() {
           rows={6}
           name="comment"
           id="comment"
-          className="block w-full rounded-md  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+          className="block w-full rounded-md  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm"
         />
       </div>
       <div className="sm:flex sm:gap-6 flex justify-center md:justify-start gap-3 py-2 ">
         <button
           onClick={textUpperCase}
           type="button"
-          className="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
+          className="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2"
         >
           Text UpperCase
         </button>
@@ -63,7 +63,7 @@ export default function Textfield() {
 
       <div className="mt-5">
         <div className="font-bold">
-          <div className="flex justify-between">
+          <div className="flex justify-between dark:text-white">
             <h2>Preview Text:</h2>
             <button
               onClick={() => {
